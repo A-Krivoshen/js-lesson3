@@ -64,15 +64,8 @@ for (var i = 0; i < arrayLength; i++){
 /3
 
 "use strict";
-
-var price;
-
-
-try {
-    if (typeof(price) !== 'number') {
-      throw " не является числом";
-    }
-    console.log('Цена товара введена корректно');
-} catch (err) {
-    console.log('Вы допустили ошибку: ' + price + err);
-}
+var positionsIndex = positions.indexOf('Машина времени DeLorean');
+var rewritePositions = positions.splice(positionsIndex, 1);
+positions.unshift(rewritePositions[0]);
+var firstThreePositions = positions.slice(0, 3);
+console.log(`Принять в первую очередь: ${firstThreePositions}.`);
